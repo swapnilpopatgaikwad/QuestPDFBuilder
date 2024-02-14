@@ -20,13 +20,15 @@ var document = Document.Create(container =>
         page.PageColor(QuestPDF.Helpers.Colors.White);
         page.DefaultTextStyle(x => x.FontSize(20));
 
+        var stream = new FileStream("logo_Background.png", FileMode.Open);
+
         page.Background()
         .AlignCenter()
         .AlignMiddle()
         .ShowEntire()
         .Height(250)
         .Width(250)
-        .Image("logo_Background.png");
+        .Image(stream);
 
 
         page.Header()
